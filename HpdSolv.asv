@@ -12,12 +12,8 @@ b = [5 9 12 14 15]'
 
 R = cholesky(A)
 
-y = fsub(R',b)  %
-%y=R'\b
+y = fsub(R,b)  % y=R'\b
 
 x = bsub(R,y)
 
 r = b-A*x
-
-x_lin = linsolve(A,b)
-err = x_lin - x
